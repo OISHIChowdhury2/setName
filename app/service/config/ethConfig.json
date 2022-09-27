@@ -1,0 +1,5 @@
+{
+    "provider": "192.168.88.97:7545",
+    "defaultAccount": "0x96DD0E4a89C150bec8d8CB236b55707D4B03a08F",
+    "defaultAccountPrivateKey": "411461eff91be2eb5258cb7f559c4906bead6a335e27e8eec1125e3be3eb3dd4"
+}
