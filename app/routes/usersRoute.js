@@ -1,37 +1,41 @@
-const express = require('express');
-const router = express.Router();
+const { Router }= require('express')
+const router = Router();
 const path = require('path');
 const fs = require('fs');
-const Service = require('../service/userService')
+const Service = require('../service/userService');
+// const { getUser } = require('../service/userService');
+// console.log("mimon");
+
+const{getUser,setUser}=require("../service/userService")
 
 router.post('/create-user', async function (req, res) {
-    console.log("mimon");
-    // try {
-    //     let userData = {
-    //         name: req.body.name,
-    //         addres: req.body.addres,
-    //         phone: req.body.phone,
-    //         issueDate: req.body.issueDate,
-    //         address: req.body.address
-    //     }
+    try {
+        let userData = {
+            name: req.body.name,
+            // addres: req.body.addres,
+            // phone: req.body.phone,
+           
+        }
       
-    //     let txHash = await Service.setUser(
-    //         req.user.ethAddress,
-    //         req.user.privateKey,
-    //         userData
-    //     );
-    //     return res.status(200).json({ txHash: txHash,});
+        let txHash = await Service.setUser(
+            req.user.ethAddress,
+            req.user.privateKey,
+            userData
+        );
+        return res.status(200).json({ txHash: txHash,});
 
-    // }
-    // catch (ex) {
-    //     console.log(ex);
-    //     return res.status(500).json({message: ex.toString()});
-    // }
+    }
+    catch (ex) {
+        console.log(ex);
+        return res.status(500).json({message: ex.toString()});
+    }
 });
 
-router.get('/all-user',async function (req, res) {    
+router.get('/get-user',async function (req, res) { 
+    // res.send('Welcome to Edurekas REST API with Node.js Tutorial!!');  
+ 
     try {
-        let userid = await Service.getUser(req.user.Address);
+        let userid = await Service.getUser(req.user.ethAddress);
         // if (nid.nid.name) {
         //     let nidImg = await nidImageService.searchByUsername(req.user.username);
          return res.status(200).json({ userData: userid.userid, });
@@ -44,16 +48,14 @@ router.get('/all-user',async function (req, res) {
     }
 });
 
-router.get('/get-nidlog',  async function (req, res, next) {
-    try {
-        let nl = await Service.getUser(req.user.ethAddress);
-        return res.status(200).json({ userLog: nl });
-    }
-    catch (ex) {
-        console.log(ex);
-        return res.status(500).json({message: ex.toString()});
-    }
-});
+
+// router.get('/user', getUser)
+//     { 
+//         res.send('Welcome to Edurekas REST API with Node.js Tutorial!!');  
+//         console.log("mimon"); 
+// }
+
+
 
 
 

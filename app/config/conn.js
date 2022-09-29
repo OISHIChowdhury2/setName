@@ -1,3 +1,3 @@
 export const ethConfig = {
-    provider: "192.168.88.97:7545"
+    provider: "127.0.0.1:7545"
 }

@@ -7,7 +7,7 @@ const cors = require('cors');
 const app = express();
 app.use(cors);
 
-const userRoute = require('./routes/usersRoute');
+const userRoute = require('./route');
 
 // app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
