@@ -1,0 +1,29 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Oishi",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.6",
+    "live-server": "^1.2.2",
+    "mocha": "^10.0.0",
+    "truffle": "^5.5.31",
+    "web3": "^1.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OISHIChowdhury2/setName.git"
+  },
+  "bugs": {
+    "url": "https://github.com/OISHIChowdhury2/setName/issues"
+  },
+  "homepage": "https://github.com/OISHIChowdhury2/setName#readme",
+  "description": ""
+}
